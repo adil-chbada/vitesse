@@ -1,10 +1,16 @@
 <script setup lang="ts">
-const { t, availableLocales, locale } = useI18n()
+import { useTheme } from 'vuetify'
+import { isDark } from '~/composables/dark'
 
+const { t, availableLocales, locale } = useI18n()
+const theme = useTheme()
 const toggleLocales = () => {
-  // change to some real logic
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+}
+const toggleTheme = () => {
+  isDark.value = !isDark.value
+  return theme.global.name.value = isDark.value ? 'light' : 'dark'
 }
 </script>
 
@@ -14,7 +20,7 @@ const toggleLocales = () => {
       <div i-carbon-campsite />
     </RouterLink>
 
-    <button class="icon-btn mx-2 !outline-none" :title="t('button.toggle_dark')" @click="toggleDark()">
+    <button class="icon-btn mx-2 !outline-none" :title="t('button.toggle_dark')" @click="toggleTheme()">
       <div i="carbon-sun dark:carbon-moon" />
     </button>
 
