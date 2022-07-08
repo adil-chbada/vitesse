@@ -1,22 +1,17 @@
+<script setup>
+const app_name = import.meta.env.APP_NAME
+</script>
+
 <template>
-  <v-navigation-drawer app>
+  <v-navigation-drawer app color="primary">
     <!-- -->
   </v-navigation-drawer>
 
-  <v-app-bar app>
-    <!-- -->
-  </v-app-bar>
-
-  <!-- Sizes your content based upon application components -->
+  <v-app-bar app color="primary" />
   <v-main>
-    <!-- Provides the application the proper gutter -->
     <v-container fluid>
-      <!-- If using vue-router -->
-      <router-view />
+      <RouterView />
     </v-container>
   </v-main>
-
-  <v-footer app>
-      <Footer></Footer>
-  </v-footer>
+  <Footer color="primary" />
 </template>

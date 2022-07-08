@@ -18,6 +18,7 @@ import Vuetify from 'vite-plugin-vuetify'
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
 export default defineConfig({
+  envPrefix: 'APP_',
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -34,7 +35,11 @@ export default defineConfig({
     Pages({
       extensions: ['vue', 'md'],
     }),
-    Vuetify({}),
+    Vuetify({
+      // https://next.vuetifyjs.com/en/features/sass-variables/
+      // customVariables: ['~/assets/variables.scss'],
+      // treeShake: true
+    }),
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
 
