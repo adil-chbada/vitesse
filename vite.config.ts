@@ -35,11 +35,7 @@ export default defineConfig({
     Pages({
       extensions: ['vue', 'md'],
     }),
-    Vuetify({
-      // https://next.vuetifyjs.com/en/features/sass-variables/
-      // customVariables: ['~/assets/variables.scss'],
-      // treeShake: true
-    }),
+    Vuetify({}),
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
 
