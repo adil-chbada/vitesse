@@ -1,9 +1,17 @@
+<script setup>
+const app_name = import.meta.env.APP_NAME
+</script>
+
 <template>
-  <main class="px-4 py-10 text-center text-gray-700 dark:text-gray-200">
-    <RouterView />
-    <Footer />
-    <div class="mt-5 mx-auto text-center opacity-75 dark:opacity-50 text-sm">
-      [Default Layout]
-    </div>
-  </main>
+  <v-navigation-drawer app color="primary">
+    <!-- -->
+  </v-navigation-drawer>
+
+  <v-app-bar app color="primary" />
+  <v-main>
+    <v-container fluid>
+      <RouterView />
+    </v-container>
+  </v-main>
+  <Footer color="primary" />
 </template>

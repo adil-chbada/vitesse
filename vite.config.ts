@@ -13,10 +13,12 @@ import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
+import Vuetify from 'vite-plugin-vuetify'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
 export default defineConfig({
+  envPrefix: 'APP_',
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -33,7 +35,7 @@ export default defineConfig({
     Pages({
       extensions: ['vue', 'md'],
     }),
-
+    Vuetify({}),
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts(),
 
